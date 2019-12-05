@@ -1,2 +1,2 @@
 # BlackTea
-Gallery of my scripts or configure files.
+Gallery of my scripts and configure files.
