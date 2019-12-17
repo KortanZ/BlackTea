@@ -29,7 +29,7 @@ nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
 
-" Use LSP omni-completion in Python files.
+" Use LSP omni-completion in c files.
 autocmd FileType c setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 
