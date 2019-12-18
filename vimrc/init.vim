@@ -1,28 +1,39 @@
+" >>>>== general config ==>>>>
+set number
+set cursorline
+set cursorcolumn
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+" <<<<== general config ==<<<<
+
+" >>>>== vim-packager config ==>>>>
 " Load packager only when you need it
 function! PackagerInit() abort
-  packadd vim-packager
-  call packager#init()
-  call packager#add('kristijanhusak/vim-packager', { 'type': 'opt' })
-  call packager#add('easymotion/vim-easymotion')
-  call packager#add('neovim/nvim-lsp', { 'type': 'opt'})
-  call packager#add('scrooloose/nerdtree')
-  " vim-lsp
-  call packager#add('prabirshrestha/vim-lsp')
-  call packager#add('prabirshrestha/async.vim')
-  call packager#add('prabirshrestha/asyncomplete.vim')
-  call packager#add('prabirshrestha/asyncomplete-lsp.vim')
-  " themes
-  call packager#add('itchyny/lightline.vim')
-  call packager#add('rakr/vim-one')
+    packadd vim-packager
+    call packager#init()
+    call packager#add('kristijanhusak/vim-packager', { 'type': 'opt' })
+    call packager#add('easymotion/vim-easymotion')
+    call packager#add('neovim/nvim-lsp', { 'type': 'opt'})
+    call packager#add('scrooloose/nerdtree')
+    " vim-lsp
+    call packager#add('prabirshrestha/vim-lsp')
+    call packager#add('prabirshrestha/async.vim')
+    call packager#add('prabirshrestha/asyncomplete.vim')
+    call packager#add('prabirshrestha/asyncomplete-lsp.vim')
+    " themes
+    call packager#add('itchyny/lightline.vim')
+    call packager#add('rakr/vim-one')
 endfunction
 
 command! PackagerInstall call PackagerInit() | call packager#install()
 command! -bang PackagerUpdate call PackagerInit() | call packager#update({ 'force_hooks': '<bang>' })
 command! PackagerClean call PackagerInit() | call packager#clean()
 command! PackagerStatus call PackagerInit() | call packager#status()
+" <<<<== vim-packager config ==<<<<
 
-" vim-lsp config
-" ======================= Start =====================================
+" >>>>==vim-lsp config==>>>>
 if executable('clangd')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'clangd',
@@ -35,26 +46,18 @@ endif
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-" ======================= End =======================================
+" <<<<== vim-lsp config ==<<<<
 
-" apperance config
-" ======================= Start =====================================
-" general settings
-set number
-set cursorline
-set cursorcolumn
-
-" theme settings
+" >>>>== theme config ==>>>>
 set noshowmode
 set termguicolors " open 256-color support
 colorscheme one
 set background=dark " for the dark version
 " set background=light " for the light version
+" <<<<== theme config ==<<<<
 
-" ======================= End =======================================
-
-" nvim-lsp config
-" ======================= Start ======================================
+" 
+" >>>>== nvim-lsp config ==>>>>
 " packadd nvim-lsp
 " lua << EOF
 " require'nvim_lsp'.clangd.setup{}
@@ -69,4 +72,4 @@ set background=dark " for the dark version
 
 " Use LSP omni-completion in c files.
 " autocmd FileType c setlocal omnifunc=v:lua.vim.lsp.omnifunc
-" ======================= End =========================================
+" <<<<== nvim-lsp config ==<<<<
