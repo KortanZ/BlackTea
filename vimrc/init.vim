@@ -37,16 +37,20 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 " ======================= End =======================================
 
-" theme config
+" apperance config
 " ======================= Start =====================================
-set noshowmode
-colorscheme one
-set background=dark " for the dark version
-" set background=light " for the light version
+" general settings
 set termguicolors
 set number
 set cursorline
 set cursorcolumn
+
+" theme settings
+set noshowmode
+colorscheme one
+set background=dark " for the dark version
+" set background=light " for the light version
+
 " ======================= End =======================================
 
 " nvim-lsp config
