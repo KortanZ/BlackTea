@@ -1,4 +1,3 @@
-filetype off
 " Load packager only when you need it
 function! PackagerInit() abort
   packadd vim-packager
@@ -42,8 +41,12 @@ inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 " ======================= Start =====================================
 set noshowmode
 colorscheme one
-" set background=dark " for the dark version
-set background=light " for the light version
+set background=dark " for the dark version
+" set background=light " for the light version
+set termguicolors
+set number
+set cursorline
+set cursorcolumn
 " ======================= End =======================================
 
 " nvim-lsp config
@@ -63,4 +66,3 @@ set background=light " for the light version
 " Use LSP omni-completion in c files.
 " autocmd FileType c setlocal omnifunc=v:lua.vim.lsp.omnifunc
 " ======================= End =========================================
-
