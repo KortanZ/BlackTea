@@ -40,13 +40,13 @@ inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 " apperance config
 " ======================= Start =====================================
 " general settings
-set termguicolors
 set number
 set cursorline
 set cursorcolumn
 
 " theme settings
 set noshowmode
+set termguicolors " open 256-color support
 colorscheme one
 set background=dark " for the dark version
 " set background=light " for the light version
