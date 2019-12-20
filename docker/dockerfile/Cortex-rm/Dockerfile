@@ -1,5 +1,7 @@
 FROM frolvlad/alpine-glibc:latest
 
+WORKDIR /home/dev
+
 RUN apk add --no-cache \
     cmake \
     && apk --no-cache add --virtual build-dependencies \
