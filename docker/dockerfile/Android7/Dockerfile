@@ -26,7 +26,7 @@ RUN apt-get update \
 ENV SHELL=/bin/bash \
     NB_USER=$NB_USER \
     NB_UID=$NB_UID \
-    NB_GID=$NB_GID \
+    NB_GID=$NB_GID
 
 ENV HOME=/home/$NB_USER
 
