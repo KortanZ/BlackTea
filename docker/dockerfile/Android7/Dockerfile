@@ -33,6 +33,9 @@ ENV HOME=/home/$NB_USER
 # Create NB_USER
 RUN useradd -m -s /bin/bash -U -u $NB_UID $NB_USER
 
+# A terrible walkaroud to solve the permission issue
+RUN chmod a+rwx $HOME
+
 USER $NB_UID
 
 # Setup work directory for backward-compatibility
