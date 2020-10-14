@@ -28,4 +28,6 @@ ENV WORK=/work
 
 WORKDIR /work
 
+RUN chmod +x /dockercross/entrypoint.sh
+
 ENTRYPOINT ["/dockcross/entrypoint.sh"]
