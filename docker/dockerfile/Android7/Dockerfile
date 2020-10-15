@@ -4,7 +4,7 @@ LABEL maintainer="Kortan Zh <kortanzh@gmail.com>"
 
 USER root
 
-COPY entrypoint.sh /dockcross/
+COPY entrypoint.sh /script/
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -28,6 +28,6 @@ ENV WORK=/work
 
 WORKDIR /work
 
-RUN chmod +x /dockercross/entrypoint.sh
+RUN chmod +x /script/entrypoint.sh
 
-ENTRYPOINT ["/dockcross/entrypoint.sh"]
+ENTRYPOINT ["/script/entrypoint.sh"]
