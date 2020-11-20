@@ -8,8 +8,8 @@ BUILDER_GROUP="adam"
 
 if [[ -n $BUILDER_UID ]] && [[ -n $BUILDER_GID ]]; then
 
-  groupadd -o -g $BUILDER_GID $BUILDER_GROUP 2> /debug_1
-  useradd -o -m -g $BUILDER_GID -u $BUILDER_UID $BUILDER_USER 2> /debug_2
+  groupadd -o -g $BUILDER_GID $BUILDER_GROUP 2> /dev/null
+  useradd -o -m -g $BUILDER_GID -u $BUILDER_UID $BUILDER_USER 2> /dev/null
   
   export HOME=/home/${BUILDER_USER}
   
