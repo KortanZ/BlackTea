@@ -12,6 +12,7 @@ if [[ -n $BUILDER_UID ]] && [[ -n $BUILDER_GID ]]; then
   useradd -o -m -g $BUILDER_GID -u $BUILDER_UID $BUILDER_USER 2> /dev/null
   
   export HOME=/home/${BUILDER_USER}
+  export LC_ALL=C
   
   chown $BUILDER_UID:$BUILDER_GID $WORK
   
