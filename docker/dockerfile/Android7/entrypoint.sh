@@ -13,6 +13,7 @@ if [[ -n $BUILDER_UID ]] && [[ -n $BUILDER_GID ]]; then
   
   export HOME=/home/${BUILDER_USER}
   export LC_ALL=C
+  export USER=$BUILDER_USER
   
   chown $BUILDER_UID:$BUILDER_GID $WORK
   
