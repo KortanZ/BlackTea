@@ -4,12 +4,12 @@
 # BUILDER_UID=$(id -u)
 # BUILDER_GID=$(id -g)
 BUILDER_USER="adam"
-BUILD_GROUP="adam"
+BUILDER_GROUP="adam"
 
 if [[ -n $BUILDER_UID ]] && [[ -n $BUILDER_GID ]]; then
 
-  groupadd -o -g $BUILDER_GID $BUILDER_GROUP 2> /dev/null
-  useradd -o -m -g $BUILDER_GID -u $BUILDER_UID $BUILDER_USER 2> /dev/null
+  groupadd -o -g $BUILDER_GID $BUILDER_GROUP 2> /debug_1
+  useradd -o -m -g $BUILDER_GID -u $BUILDER_UID $BUILDER_USER 2> /debug_2
   
   export HOME=/home/${BUILDER_USER}
   
