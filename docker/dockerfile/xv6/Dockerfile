@@ -6,12 +6,15 @@ USER root
 
 COPY entrypoint.sh /script/
 
+# For debug
+RUN echo 'Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
+
 # Install all OS dependencies
-RUN pacman -Syu \
+RUN pacman -Syu --noconfirm \
   && pacman -S --noconfirm \
     riscv64-linux-gnu-binutils riscv64-linux-gnu-gcc riscv64-linux-gnu-gdb qemu-arch-extra \
-    git vim
- && pacman -Scc
+    git vim \
+ && pacman -Scc --noconfirm
 
 RUN mkdir /work
 

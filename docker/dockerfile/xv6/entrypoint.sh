@@ -13,8 +13,8 @@ if [[ -n $BUILDER_UID ]] && [[ -n $BUILDER_GID ]]; then
   
   chown $BUILDER_UID:$BUILDER_GID $WORK
   
-  su $BUILDER_USER
-
+  chroot --userspec=$BUILDER_UID:$BUILDER_GID --skip-chdir / "$@"
+else
+  exec "$@"
 fi
 
-exec "$@"
