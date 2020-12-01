@@ -4,5 +4,5 @@
 ### Execute bash in container
 docker exec -it --user "$(id -u)" container_name bash
 ### Attach the container
-```docker attach container_name```
+```docker attach container_name```  
 **Do not use ```exit``` to quit if you are half done your jobs, use ```ctrl-p ctrl-q``` to detach from the container.**
