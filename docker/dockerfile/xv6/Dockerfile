@@ -6,9 +6,6 @@ USER root
 
 COPY entrypoint.sh /script/
 
-# For debug
-RUN echo 'Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
-
 # Install all OS dependencies
 RUN pacman -Syu --noconfirm \
   && pacman -S --noconfirm \
